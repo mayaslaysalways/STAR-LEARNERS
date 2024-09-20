@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="account.css" />
+    <title>Account - STAR LEARNER</title>
+</head>
+<body>
+
+    <header>
+        <a href="home.html" class="logo">STAR LEARNER</a>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="contact.html">Contact</a>
+            <a href="account.html" class="active">Account</a>
+        </nav>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <section class="profile-section">
+        <h2>My Profile</h2>
+        <div class="profile-info">
+            <img src="user.jpg" alt="User Profile Picture" class="profile-pic" id="profile-pic">
+            <div class="profile-details">
+                <h3 id="profile-username"><i class="fas fa-user"></i> John Doe</h3>
+                <p id="profile-email"><i class="fas fa-envelope"></i> johndoe@example.com</p>
+                <p><i class="fas fa-calendar-alt"></i> Joined on January 1, 2023</p>
+                <button id="edit-profile-btn" class="edit-profile-btn"><i class="fas fa-edit"></i> Edit Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-editor-section" id="profile-editor-section" style="display: none;">
+        <h2>Edit Profile</h2>
+        <form action="EditProfileServlet" method="POST" id="profile-form">
+            <div class="form-group">
+                <label for="new-username"><i class="fas fa-user"></i> New Username</label>
+                <input type="text" name="new-username" id="new-username" placeholder="Enter new username">
+            </div>
+            <div class="form-group">
+                <label for="new-email"><i class="fas fa-envelope"></i> New Email</label>
+                <input type="email" name="new-email" id="new-email" placeholder="Enter new email">
+            </div>
+            <div class="form-group">
+                <label for="new-password"><i class="fas fa-lock"></i> New Password</label>
+                <input type="password" name="new-password" id="new-password" placeholder="Enter new password">
+            </div>
+            <div class="form-group">
+                <label for="new-profile-pic"><i class="fas fa-image"></i> New Profile Picture</label>
+                <input type="file" name="new-profile-pic" id="new-profile-pic" accept="image/*" onchange="previewProfilePic(event)">
+                <img id="profile-pic-preview" src="user.jpg" alt="Profile Preview" class="profile-pic-preview">
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="save-btn"><i class="fas fa-save"></i> Save Changes</button>
+                <button type="button" class="cancel-btn" id="cancel-btn"><i class="fas fa-times"></i> Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="account.script.js"></script>
+</body>
+</html>
